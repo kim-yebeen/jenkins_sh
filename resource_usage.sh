@@ -18,4 +18,4 @@ MEMORY_USAGE=$(free -m | awk 'NR==2{printf "Memory Usage: %s/%sMB (%.2f%%)\n", $
 DISK_USAGE=$(df -h | awk '$NF=="/"{printf "Disk Usage: %d/%dGB (%s)\n", $3, $2, $5}')
 
 # 로그 파일에 기록
-echo "$CURRENT_TIME CPU Usage: $CPU_USAGE, $MEMORY_USAGE, $DISK_USAGE" >> $LOG_FILE
+sudo echo "$CURRENT_TIME CPU Usage: $CPU_USAGE, $MEMORY_USAGE, $DISK_USAGE" >> $LOG_FILE
