@@ -11,6 +11,12 @@ echo "---------"
 # 현재 사용자 크론탭을 임시 파일에 백업
 crontab -l > current_crontab.txt
 
+# txt파일 생성여부 확인
+echo "---------"
+ls
+echo "---------"
+
+
 # 임시 파일에서 특정 구문을 포함하지 않는 라인만을 새로운 파일로 저장
 grep -v "$CRON_JOB" current_crontab.txt > new_crontab.txt
 
