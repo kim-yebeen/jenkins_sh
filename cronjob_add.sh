@@ -15,13 +15,15 @@ crontab -l > current_crontab.txt
 grep -v "$CRON_JOB" current_crontab.txt > new_crontab.txt
 
 # 새롭게 구문 추가
-cat "$CRON_JOB" >> new_crontab.txt
+cat "$CRON_JOB" >> ./new_crontab.txt
 
 
 # txt파일 생성여부 확인
+echo "=========="
+ls
 echo "---------"
 cat new_crontab.txt
-echo "---------"
+echo "========="
 
 
 # 새로운 크론탭 파일을 적용
