@@ -17,6 +17,8 @@ grep -v "$CRON_JOB" current_crontab.txt > new_crontab.txt
 echo "********"
 ls
 echo "---------"
+cat current_crontab.txt
+echo "---------"
 cat new_crontab.txt
 echo "*********"
 
@@ -27,6 +29,8 @@ cat "$CRON_JOB" >> ./new_crontab.txt
 # txt파일 생성여부 확인
 echo "=========="
 ls
+echo "---------"
+cat current_crontab.txt
 echo "---------"
 cat new_crontab.txt
 echo "========="
