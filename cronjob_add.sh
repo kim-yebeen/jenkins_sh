@@ -21,7 +21,7 @@ ls
 echo "---------"
 
 # 새롭게 구문 추가
-cat $CRON_JOB >> new_crontab.txt
+cat $CRON_JOB
 
 # 새로운 크론탭 파일을 적용
 crontab new_crontab.txt
