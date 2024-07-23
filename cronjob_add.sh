@@ -3,42 +3,14 @@
 # 크론탭에서 제거할 구문
 CRON_JOB="* * * * * sudo /var/lib/jenkins/workspace/jenkins-log-pipeline/resource_usage.sh"
 
-# 현재 작업경로 확인
-echo "---------"
-pwd
-echo "---------"
-
-# 텍스트파일 생성
-touch current_crontab.txt
-touch new_crontab.txt
-
 # 현재 사용자 크론탭을 임시 파일에 백업
 crontab -l > current_crontab.txt
 
 # 임시 파일에서 특정 구문을 포함하지 않는 라인만을 새로운 파일로 저장
 grep -v "$CRON_JOB" current_crontab.txt > new_crontab.txt
 
-echo "********"
-ls
-echo "---------"
-cat current_crontab.txt
-echo "---------"
-cat new_crontab.txt
-echo "*********"
-
 # 새롭게 구문 추가
-cat "$CRON_JOB" >> ./new_crontab.txt
-
-
-# txt파일 생성여부 확인
-echo "=========="
-ls
-echo "---------"
-cat current_crontab.txt
-echo "---------"
-cat new_crontab.txt
-echo "========="
-
+echo "$CRON_JOB" >> ./new_crontab.txt
 
 # 새로운 크론탭 파일을 적용
 crontab new_crontab.txt
