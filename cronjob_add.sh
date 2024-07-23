@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 크론탭에서 제거할 구문
-CRON_JOB="* * * * * sudo /var/lib/jenkins/workspace/Jenkins-log-pipeline/resource_usage.sh"
+CRON_JOB="* * * * * sudo /var/lib/jenkins/workspace/jenkins-log-pipeline/resource_usage.sh"
 
 # 현재 작업경로 확인
 echo "---------"
